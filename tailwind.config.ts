@@ -7,7 +7,13 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    screens: { sm: '640px', md: '768px', lg: '1024px', xl: '1280px' },
+    screens: {
+      xs: '400px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
     colors: {
       'black-100': '#151515',
       'purple-100': '#854DFF',
@@ -23,7 +29,13 @@ const config: Config = {
     container: {
       center: true,
       padding: '2rem',
-      screens: { sm: '640px', md: '768px', lg: '1024px', xl: '1280px' },
+      screens: {
+        xs: '330px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+      },
     },
   },
   plugins: [],
