@@ -1,10 +1,22 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 type Props = {};
 
-const Input = ({ name, placeholder, register, errors }: Props) => {
+const Input = ({ name, placeholder, register, errors, i }: Props) => {
   return (
-    <div className='flex flex-col max-w-[160px]'>
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: -100,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: { type: 'spring', duration: 0.75 * (i + 1) },
+      }}
+      className='flex flex-col max-w-[160px]'
+    >
       <label htmlFor={name} className='text-grey-100 uppercase'>
         {name}
       </label>
@@ -19,7 +31,7 @@ const Input = ({ name, placeholder, register, errors }: Props) => {
       <p className='text-red-100 italic text-sm mt-1'>
         {errors[name]?.message}
       </p>
-    </div>
+    </motion.div>
   );
 };
 

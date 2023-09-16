@@ -91,10 +91,11 @@ const Form = (props: Props) => {
       noValidate
       className='flex flex-wrap xs:flex-nowrap justify-center md:justify-start gap-4'
     >
-      {inputData.map(({ name, placeholder }) => (
+      {inputData.map(({ name, placeholder }, i) => (
         <Input
           key={name}
           name={name}
+          i={i}
           register={register}
           errors={errors}
           placeholder={placeholder}
