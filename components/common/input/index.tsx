@@ -1,12 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
-
-type FormValues = {
-  day: number;
-  month: number;
-  year: number;
-};
+import { FormValues } from '@/utils/types';
 
 type InputProps = {
   name: 'day' | 'month' | 'year';

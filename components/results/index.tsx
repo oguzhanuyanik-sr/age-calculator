@@ -2,8 +2,7 @@
 import React from 'react';
 import { useGlobalContext } from '@/app/context/store';
 import { motion } from 'framer-motion';
-
-type PeriodsType = 'year' | 'month' | 'day';
+import { PeriodsType } from '@/utils/types';
 
 const periods: PeriodsType[] = ['year', 'month', 'day'];
 

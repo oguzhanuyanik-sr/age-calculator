@@ -6,12 +6,8 @@ import {
   SetStateAction,
   useState,
 } from 'react';
-
-type TimeType = {
-  day: string;
-  month: string;
-  year: string;
-};
+import { TimeType } from '@/utils/types';
+import { defaultTime } from '@/utils/constants';
 
 interface ContextProps {
   time: TimeType;
@@ -32,11 +28,7 @@ export const GlobalContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [time, setTime] = useState({
-    day: '--',
-    month: '--',
-    year: '--',
-  });
+  const [time, setTime] = useState(defaultTime);
 
   return (
     <GlobalContext.Provider value={{ time, setTime }}>

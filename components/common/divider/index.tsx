@@ -3,23 +3,12 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Arrow from '@/public/icon-arrow.svg';
-
-const variants = {
-  initial: {
-    opacity: 0,
-    x: 100,
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: { type: 'spring', duration: 2 },
-  },
-};
+import { framerXVariants } from '@/utils/constants';
 
 const Divider = () => {
   return (
     <motion.div
-      variants={variants}
+      variants={framerXVariants}
       initial='initial'
       animate='animate'
       className='flex items-center relative justify-center md:justify-end my-8'

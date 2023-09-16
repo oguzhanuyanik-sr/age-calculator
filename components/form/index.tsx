@@ -2,26 +2,7 @@
 import React from 'react';
 import Input from '../common/input';
 import { useFormHandling } from '@/hooks/useFormHandling';
-
-type InputDataTypes = {
-  name: 'day' | 'month' | 'year';
-  placeholder: string;
-}[];
-
-const inputData: InputDataTypes = [
-  {
-    name: 'day',
-    placeholder: 'DD',
-  },
-  {
-    name: 'month',
-    placeholder: 'MM',
-  },
-  {
-    name: 'year',
-    placeholder: 'YYYY',
-  },
-];
+import { inputData } from '@/utils/constants';
 
 const Form = () => {
   const { register, errors } = useFormHandling();
