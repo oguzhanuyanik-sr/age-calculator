@@ -1,23 +1,27 @@
 'use client';
 import React from 'react';
-import Arrow from '@/public/icon-arrow.svg';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Arrow from '@/public/icon-arrow.svg';
 
-type Props = {};
+const variants = {
+  initial: {
+    opacity: 0,
+    x: 100,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: { type: 'spring', duration: 2 },
+  },
+};
 
-const Divider = (props: Props) => {
+const Divider = () => {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        x: 100,
-      }}
-      animate={{
-        opacity: 1,
-        x: 0,
-        transition: { type: 'spring', duration: 2 },
-      }}
+      variants={variants}
+      initial='initial'
+      animate='animate'
       className='flex items-center relative justify-center md:justify-end my-8'
     >
       <div className='h-[1px] w-full bg-white-300 my-6'></div>

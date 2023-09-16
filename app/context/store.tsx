@@ -1,5 +1,4 @@
 'use client';
-
 import {
   createContext,
   useContext,
@@ -33,7 +32,11 @@ export const GlobalContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [time, setTime] = useState('--');
+  const [time, setTime] = useState({
+    day: '--',
+    month: '--',
+    year: '--',
+  });
 
   return (
     <GlobalContext.Provider value={{ time, setTime }}>

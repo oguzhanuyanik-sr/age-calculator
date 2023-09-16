@@ -1,9 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FieldErrors, UseFormRegister } from 'react-hook-form';
 
-type Props = {};
+type FormValues = {
+  day: number;
+  month: number;
+  year: number;
+};
 
-const Input = ({ name, placeholder, register, errors, i }: Props) => {
+type InputProps = {
+  name: 'day' | 'month' | 'year';
+  placeholder: string;
+  register: UseFormRegister<FormValues>;
+  errors: FieldErrors<FormValues>;
+  i: number;
+};
+
+const Input = ({ name, placeholder, register, errors, i }: InputProps) => {
   return (
     <motion.div
       initial={{
@@ -22,7 +35,6 @@ const Input = ({ name, placeholder, register, errors, i }: Props) => {
       </label>
       <input
         type='number'
-        name={name}
         id={name}
         placeholder={placeholder}
         {...register(name)}
